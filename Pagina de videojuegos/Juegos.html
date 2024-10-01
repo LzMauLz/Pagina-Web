@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header class="header">
+        <div class="menu container">
+            <a href="index.html">
+              <img class="logo-1" src="images/logo.png" alt="" />
+            </a>
+        <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="menu">
+            </label>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Juegos.html">Juegos</a></li>
+                    <li><a href="Ofertas.html">Ofertas</a></li>
+                    <li><a href="#Contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <ul>
+                    <li class="submenu">
+                    <img src="images/car.svg" id="img-carrito" alt="carrito">
+                    <div id="carrito">
+                        <table id="lista-carrito">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                        <a href="#" id="Comprar" class="btn-2"> Comprar</a>
+                    </div>
+                </li>
+                </ul>
+            </div>       
+        </div>
+    </header>
+
+
+    <main>
+        <h1>Juegos</h1>
+        <div class="main-img">
+            <img src="images/Juegos.jpg" alt="descripción de la imagen" >
+        </div>
+    </main>
+
+    <section class="products3 container">
+        <h1>Acción</h1>
+    <div class="swiper mySwiper-2" id="swiper1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="product2">
+              <div class="product3-img">
+                <img src="images/modern warfare.jpeg" alt="" />
+                <h3>Call of duty modern warfare 3</h3>
+                <div class="botones">
+                  <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+                </div>
+              </div>
+
+              <div class="product2-txt">
+                <p class="precio">90.000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="product2">
+              <div class="product3-img">
+                <img src="images/mafia.jpg" alt="" />
+                <h3>Mafia definitive edition</h3>
+                <div class="botones">
+                  <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
+                </div>
+              </div>
+              <div class="product2-txt">
+                <p class="precio">90.000</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product2">
+              <div class="product3-img">
+                <img src="images/cyberpunk.jpg" alt="" />
+                <h3>Cyberpunk 2077</h3>
+                <div class="botones">
+                  <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+                </div>
+              </div>
+              <div class="product2-txt">
+                <p class="precio">95.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+</section>
+
+
+<section class="products3 container">
+    <h1>Aventura</h1>
+    <div class="swiper mySwiper-2" id="swiper2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="product2">
+              <div class="product3-img">
+                <img src="images/finalfantasy.avif" alt="" />
+                <h3>Final fantasy VII rebirth</h3>
+                <div class="botones">
+                  <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar al carrito</a>
+                </div>
+              </div>
+
+              <div class="product2-txt">                  
+                <p class="precio">110.000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="product2">
+              <div class="product3-img">
+                <img src="images/cupead.jpg" alt="" />
+                <h3>Cuphead</h3>
+                <div class="botones">
+                  <a href="#" class="agregar-carrito btn-2" data-id="8">Agregar al carrito</a>
+                </div>
+              </div>
+
+              <div class="product2-txt">
+                <p class="precio">45.000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="product2">
+              <div class="product3-img">
+                <img src="images/fallout.jpg" alt="" />
+                <h3>Fallout 4</h3>
+                <div class="botones">
+                  <a href="#" class="agregar-carrito btn-2" data-id="9">Agregar al carrito</a>
+                </div>
+              </div>
+              <div class="product2-txt">
+                <p class="precio">35.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+</section>
+
+<section class="products3 container">
+    <h1>Lucha</h1>
+<div class="swiper mySwiper-2" id="swiper3">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="product2">
+          <div class="product3-img">
+            <img src="images/mk1.jpg" alt="" />
+            <h3>Mortal kombat 1</h3>
+            <div class="botones">
+              <a href="#" class="agregar-carrito btn-2" data-id="10">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="product2-txt">
+            <p class="precio">95.000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="product2">
+          <div class="product3-img">
+            <img src="images/Street.jpg" alt="" />
+            <h3>Street Figther 6</h3>
+            <div class="botones">
+              <a href="#" class="agregar-carrito btn-2" data-id="11">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="product2-txt">
+            <p class="precio">90.000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="product2">
+          <div class="product3-img">
+            <img src="images/tekken.jpg" alt="" />
+            <h3>Tekken 8</h3>
+            <div class="botones">
+              <a href="#" class="agregar-carrito btn-2" data-id="12">Agregar al carrito</a>
+            </div>
+          </div>
+          <div class="product2-txt">
+            <p class="precio">90.000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+</div>
+</section>
+
+<section id="Contacto">
+    <div class="txt">
+      <h4>Redes sociales</h4>
+      <div class="socials">
+          <a href="https://www.facebook.com/GameShopColombia.co">
+            <div class="social">
+              <img src="images/a1.svg" alt="" />
+            </div>
+          </a>
+          <a href="https://x.com/GameShopComCo">
+            <div class="social">
+              <img src="images/a2.svg" alt="" />
+            </div>
+          </a>
+          <a href="https://www.instagram.com/digital.store.psn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <div class="social">
+              <img src="images/a3.svg" alt="" />
+            </div>
+          </a>
+        </div>
+  </div>
+  </section>
+
+
+  <footer class="footer">
+
+      <div class="footer-content container">
+          <div class="link">
+          <h3>lorem</h3>
+          <ul>
+              <li><a href="#">lorem</a></li>
+              <li><a href="#">lorem</a></li>
+              <li><a href="#">lorem</a></li>
+              <li><a href="#">lorem</a></li>
+          </ul>
+          </div>
+
+          <div class="link">
+              <h3>lorem</h3>
+              <ul>
+                  <li><a href="#">lorem</a></li>
+                  <li><a href="#">lorem</a></li>
+                  <li><a href="#">lorem</a></li>
+                  <li><a href="#">lorem</a></li>
+              </ul>
+              </div>
+
+          <div class="link">
+          <h3>lorem</h3>
+          <ul>
+              <li><a href="#">lorem</a></li>
+              <li><a href="#">lorem</a></li>
+              <li><a href="#">lorem</a></li>
+              <li><a href="#">lorem</a></li>
+          </ul>
+          </div>
+
+          <div class="link">
+              <h3>lorem</h3>
+              <ul>
+                  <li><a href="#">lorem</a></li>
+                  <li><a href="#">lorem</a></li>
+                  <li><a href="#">lorem</a></li>
+                  <li><a href="#">lorem</a></li>
+              </ul>
+              </div>
+      </div>
+
+  </footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
+  
