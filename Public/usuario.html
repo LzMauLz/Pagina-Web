@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Repair</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"/>
+</head>
+
+ <body>
+    <div class="container">
+        <div class="logo-container">
+            <a href="index.html">
+            <img src="images/logo.png" alt="">
+            </a>
+        </div>
+
+        <div class="tabs">
+            <button id="btn-login" class="active">Ingresar</button>
+            <button id="btn-register">Registrarse</button>
+        </div>
+
+        <form id="login-form" class="active">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+
+        <form id="register-form">
+            <label for="new-email">Correo electrónico:</label>
+            <input type="email" id="new-email" required>
+
+            <label for="new-password">Contraseña:</label>
+            <input type="password" id="new-password" required>
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+    <script>
+
+        const btnLogin = document.getElementById('btn-login');
+        const btnRegister = document.getElementById('btn-register');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+
+        btnLogin.addEventListener("click", () => {
+            btnLogin.classList.add("active");
+            btnRegister.classList.remove("active");
+            loginForm.classList.add("active");
+            registerForm.classList.remove("active");
+        });
+
+        btnRegister.addEventListener("click", () => {
+            btnRegister.classList.add("active");
+            btnLogin.classList.remove("active");
+            registerForm.classList.add("active");
+            loginForm.classList.remove("active");
+        });
+
+        loginForm.addEventListener("submit", function (e){
+            e.preventDefault();
+            const email = document.getElementById ("email").value;
+            const password = document.getElementById("password").value;
+
+            const users = JSON.parse(localStorage.getItem("users"))|| [];
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if(user) {
+                alert("Inicio de sesión exitoso");
+                localStorage.setItem("loggedInUser", email);
+
+                window.location.href = "index.html";
+
+            } else{
+                alert("Información Incorrecta")
+            }
+        });
+
+        registerForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = document.getElementById("new-email").value;
+            const password = document.getElementById("new-password").value;
+
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            users.push ({email,password});
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert ("Usuario Registrado con Éxito");
+            registerForm.reset();
+            btnLogin.click();
+        });
+    </script>
+ </body>
+
+ <style>
+    :root {
+   --clr-main:#ff8432;
+   --clr-main-light:#020202;
+   --clr-white:#ececec;
+   --clr-gray:#e2e2e2;
+   --clr-red:#961818;
+}
+    
+    body{
+    font-family: Arial, sans-serif;
+    background-color: var(--clr-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    }
+
+    .container{
+    background-color: var(--clr-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgb(0,0,0,0.1);
+    width: 400px;
+    animation: fadeIn 1s ease-in-out;
+    }
+
+    .logo-container{
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+    .logo-container img {
+        width: 120px;
+    }
+
+    .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    }
+
+    .tabs button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+    }
+
+    .tabs button.active {
+    color: var(--clr-main-light);
+    border-bottom: 2px solid var(--clr-main-light);
+    }
+
+    form {
+    display: none;
+    flex-direction: column;
+    }
+
+    form.active {
+    display: flex;
+    }
+
+    label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--clr-main-light);
+    }
+
+    input[type="email"],
+    input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--clr-gray);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+    border-color: var(--clr-main-light);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+    }
+
+    button[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--clr-main-light);
+    color: var(--clr-white);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+    background-color: var(--clr-main-light);
+    }
+
+    @keyframes fadeIn {
+
+    0% {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+
+    100%{
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+
+    @media (max-width: 480px) {
+    
+    .container {
+    width: 90%;
+    padding: 20px;
+    }
+
+    .tabs button {
+    font-size: 16px;
+    }
+    }
+
+ </style>
+ </html>
+
+
+    
