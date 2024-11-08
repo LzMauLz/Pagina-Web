@@ -54,7 +54,7 @@ async function getClientSecret() {
     const amount = parseInt(cartTotal.replace(/[^\d]/g, ''));
 
 
-    const response = await fetch('https://mi-tienda-backend.onrender.com/api/create-payment-intent', {
+    const response = await fetch('https://mi-tienda-backend.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount })
