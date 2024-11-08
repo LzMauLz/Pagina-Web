@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Phone Repair</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-orange-100 flex items-center justify-center min-h-screen" style="background-color: #ff8432;">
+    <div class="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
+        <h1 class="text-2xl font-bold mb-6 text-center" style="color: #020202;">Finalizar Compra</h1>
+        
+        <div class="mb-6 text-center">
+            <p id="amount-display" class="text-lg font-semibold" style="color: #333;">Total a pagar: $0 COP</p>
+        </div>
+        
+        <form id="payment-form" class="space-y-4">
+            <div class="mb-4">
+                <label class="block font-medium mb-2" for="card-element" style="color: #333;">
+                    Tarjeta de Crédito o Débito
+                </label>
+                <div id="card-element" class="border border-gray-300 rounded p-3"></div>
+                <div id="card-errors" role="alert" class="text-red-500 text-sm mt-2"></div>
+            </div>
+            
+            <button type="submit" id="submit-button" class="w-full bg-black text-white font-semibold py-2 rounded-md hover:bg-gray-800 flex items-center justify-center focus:outline-none">
+                <span id="button-text">Pagar</span>
+                <svg id="spinner" class="hidden w-5 h-5 ml-2 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8h8a8 8 0 01-8 8v-8H4z"></path>
+                </svg>
+            </button>
+        </form>
+        <button id="cancel-button" class="w-full mt-4 bg-black text-white font-semibold py-2 rounded-md hover:bg-gray-600 focus:outline-none">
+            Cancelar Pago
+        </button>
+    </div>
+
+    <script src="checkout.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cartTotal = localStorage.getItem('cartTotal') || '0';
+            document.getElementById('amount-display').textContent = `Total a pagar: ${formatCOP(cartTotal)}`;
+        
+            document.getElementById('cancel-button').addEventListener('click', function () {
+                window.location.href = "carrito.html";
+            });
+        });
+        </script>
+</body>
+</html>
