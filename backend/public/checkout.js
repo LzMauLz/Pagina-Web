@@ -53,7 +53,6 @@ async function getClientSecret() {
     const cartTotal = localStorage.getItem('cartTotal') || '0';
     const amount = parseInt(cartTotal.replace(/[^\d]/g, ''));
 
-
     const response = await fetch('https://mi-tienda-backend.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
