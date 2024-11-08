@@ -64,11 +64,6 @@ async function getClientSecret() {
     return data.clientSecret;
 }
 
-
-    const data = await response.json();
-    return data.clientSecret;
-}
-
 function setLoading(isLoading) {
     submitButton.disabled = isLoading;
     buttonText.classList.toggle('hidden', isLoading);
